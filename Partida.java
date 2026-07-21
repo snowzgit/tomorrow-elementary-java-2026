@@ -40,15 +40,17 @@ public class Partida {
 			}
 			if(fazerJogada(linha, coluna)) {
 				if(terminou()) {
-					System.out.println("Jogador " + atual.getNome() + " Venceu!");
+					tabuleiro.mostrarTabuleiro();
+					System.out.println("Jogador " + atual.getSimbolo() + " Venceu!");
 				break;
 			}
-				trocarJogador();
-			tabuleiro.mostrarTabuleiro();
+				
 			if(tabuleiro.empate()) {
 				tabuleiro.mostrarTabuleiro();
 				System.out.println("Empate!");
+				break;
 			}
+			trocarJogador();
 			} else {
 			    System.out.println("Casa ocupada!");
 					}
@@ -76,6 +78,6 @@ public class Partida {
 	}
 
 	public boolean terminou() {
-		return tabuleiro.verificarVitoria() || tabuleiro.empate();
+		return tabuleiro.verificarVitoria();
 	}
 }
