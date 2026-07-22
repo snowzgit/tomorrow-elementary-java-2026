@@ -1,9 +1,11 @@
 package inicio;
 
-public class Jogador {
-	private String nome;
-	private char simbolo;
-		public Jogador(String nome,char simbolo) {
+public abstract class  Jogador {
+	
+	protected String nome;
+	protected char simbolo;
+	
+	public Jogador(String nome,char simbolo) {
 			this.nome = nome;
 			this.simbolo = simbolo;
 		}
@@ -13,4 +15,5 @@ public class Jogador {
 		public String getNome() {
 			return nome;
 		}
+		public abstract Jogada escolherJogada(Tabuleiro tabuleiro);
 }
