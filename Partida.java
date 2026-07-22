@@ -28,20 +28,19 @@ public class Partida {
 			
 			System.out.println("===== VEZ DO JOGADOR " + atual.getNome() +" '" + atual.getSimbolo() + "'" + " =====");	
 			
-			System.out.print("Linha (0-2): ");
-			int linha = sc.nextInt();
-
-			System.out.print("Coluna (0-2): ");
-			int coluna = sc.nextInt();
+			Jogada jogada = jogadorAtual.escolherJogada(tabuleiro);
 			
-			if (linha < 0 || linha>2 || coluna <0 || coluna > 2) {
-				System.out.println("Posições Invalidas!");
+			if(!jogada.ehValida()) {
+				System.out.print("Posições Inválidas");
 				continue;
-			}
+				}
+				
+			int linha = jogada.getLinha();
+			int coluna = jogada.getColuna();
 			if(fazerJogada(linha, coluna)) {
 				if(terminou()) {
 					tabuleiro.mostrarTabuleiro();
-					System.out.println("Jogador " + atual.getSimbolo() + " Venceu!");
+					System.out.println("Jogador "+ atual.getNome() +", " + atual.getSimbolo() + " Venceu!");
 				break;
 			}
 				
