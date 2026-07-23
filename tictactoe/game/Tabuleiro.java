@@ -18,6 +18,7 @@ public class Tabuleiro {
                     System.out.print(" | ");
                 }
             }
+
             System.out.println();
 
             if (linha < 2) {
@@ -57,6 +58,14 @@ public class Tabuleiro {
     public void jogar(int linha, int coluna, char jogador) {
         casas[linha][coluna] = jogador;
     }
+
+    public char getCasa(int linha, int coluna) {
+        return casas[linha][coluna];
+    }
+
+    public void limparCasa(int linha, int coluna) {
+        casas[linha][coluna] = ' ';
+    }
     
     public boolean casaLivre(int linha, int coluna) {
         return casas[linha][coluna] ==  ' ';
@@ -68,7 +77,7 @@ public class Tabuleiro {
                 if (casas[linha][coluna] == ' ') return false;
             }
         }
-        
+
         return true;
     }
 }
