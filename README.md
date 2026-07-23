@@ -1,11 +1,11 @@
 # Tic-Tac-Toe
-> a Java implementation of Tic-Tac-Toe in which the player competes against the computer.
+A Java implementation of Tic-Tac-Toe in which the player competes against the computer.
 
 ## Overview
 
 This repository contains the final project developed for Tomorrow's in-person
 Elementary Java course, held at the Federal University of Bahia (UFBA) from
-July 17 to 24, 2026.
+July 13 to 24, 2026.
 
 The project consists of a playable Tic-Tac-Toe game in which the player
 competes against the computer.
