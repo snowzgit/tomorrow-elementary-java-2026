@@ -12,9 +12,9 @@ public class Iniciar {
     	Jogador jogador1;
     	Jogador jogador2;
 
+        Random random = new Random();
+
     	if (opcao == 1) {
-    		Random random = new Random();
-    		
     		System.out.print("Digite o nome do primeiro jogador: ");
         	String nome1 = scanner.next();
         
@@ -34,9 +34,8 @@ public class Iniciar {
     		System.out.print("Digite o seu nome: ");
     		String nome1 = scanner.next();
     		
-    		System.out.print("Digite 1 para modo fácil\n2 para modo médio\3 para modo difícil: ");
+    		System.out.print("Digite 1 para modo fácil ou 2 para modo médio: ");
     		int modo = scanner.nextInt();
-    		
 
             switch(modo) {
                 case 1:
@@ -44,14 +43,14 @@ public class Iniciar {
 	        	    jogador2 = new JogadorComputadorFacil("CPU", 'O');
                     break;
 
-                case 2:
-                    jogador1 = new JogadorComputadorMedio("CPU", 'X');
-    			    jogador2 = new JogadorHumano(nome1, 'O');
-                    break;
-
                 default:
-                    jogador1 = new JogadorComputadorDificil("CPU", 'X');
-    			    jogador2 = new JogadorHumano(nome1, 'O');
+                    if (random.nextBoolean()) {
+                        jogador1 = new JogadorComputadorMedio("CPU", 'X');
+                        jogador2 = new JogadorHumano(nome1, 'O');
+                    } else {
+                        jogador1 = new JogadorHumano(nome1, 'X');
+                        jogador2 = new JogadorComputadorMedio("CPU", 'O');
+                    }
             }
     	}
 
