@@ -3,14 +3,10 @@ package tictactoe.game;
 import java.util.Arrays;
 
 public class Tabuleiro {
-    private char[][] casas;
-    
+    private final char[][] casas = new char[3][3];
+
     public Tabuleiro() {
-        casas = new char[3][3];
-        for(int linha = 0; linha < 3; linha++) {
-            for(int coluna = 0; coluna < 3; coluna++)
-                casas[linha][coluna] = ' ';	
-        }
+        for (char[] linha : casas) Arrays.fill(linha, ' ');
     }
 
     public void mostrarTabuleiro() {
