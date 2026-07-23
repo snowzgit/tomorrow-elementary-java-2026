@@ -33,12 +33,14 @@ public class Tabuleiro {
                 casas[linha][0] == casas[linha][2])
                 return true;
         }
+
         for (int coluna = 0; coluna < 3; coluna++) {
             if (casas[0][coluna] != ' ' && 
                 casas[0][coluna] == casas[1][coluna] &&
                 casas[0][coluna] == casas[2][coluna])
                 return true;
         }
+
         if (casas[0][0]!=' ' &&
             casas[0][0] == casas[1][1] &&
             casas[0][0] == casas[2][2])
@@ -63,12 +65,10 @@ public class Tabuleiro {
     public boolean empate() {
         for(int linha = 0; linha < 3; linha++) {
             for(int coluna = 0; coluna < 3; coluna++) {
-                
-                if (casas[linha][coluna] == ' ') {
-                    return false;
-                }
-                }
-    }
-    return true;
+                if (casas[linha][coluna] == ' ') return false;
+            }
+        }
+        
+        return true;
     }
 }

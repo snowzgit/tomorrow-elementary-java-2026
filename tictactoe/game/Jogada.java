@@ -12,11 +12,13 @@ public class Jogada {
 	public int getLinha() {
 		return linha;
 	}
+
 	public int getColuna() {
 		return coluna;
 	}
+    
 	public boolean ehValida(){
 		return linha >= 0 && linha <= 2 &&
 	           coluna >= 0 && coluna <= 2;
-		}
+	}
 }
