@@ -1,10 +1,10 @@
 package tictactoe.game;
 import java.util.Random;
 
-public class JogadorComputador extends Jogador{
+public class JogadorComputadorDificil extends Jogador {
     private Random random = new Random();
     
-    public JogadorComputador(String nome, char simbolo) {
+    public JogadorComputadorDificil(String nome, char simbolo) {
         super(nome, simbolo);
     }
 
